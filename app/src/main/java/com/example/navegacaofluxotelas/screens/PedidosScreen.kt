@@ -11,14 +11,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.navegacaofluxotelas.Botao
 import com.example.navegacaofluxotelas.Texto
 
-@Preview(showSystemUi = true, showBackground = true)
 @Composable
-fun PedidosScreen(modifier: Modifier = Modifier){
+fun PedidosScreen(
+    modifier: Modifier = Modifier,
+    navController: NavController,
+    numeroPedido: String
+){
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -26,7 +29,7 @@ fun PedidosScreen(modifier: Modifier = Modifier){
             .padding(32.dp)
     ){
         Texto(
-            texto = "Pedidos"
+            texto = "Pedido - $numeroPedido"
         )
 
         Column(
@@ -37,6 +40,7 @@ fun PedidosScreen(modifier: Modifier = Modifier){
             verticalArrangement = Arrangement.spacedBy(16.dp) // espaçamento
         ){
             Botao(
+                onClick = {navController.navigate("menu")},
                 texto = "Voltar"
             )
         }

@@ -14,6 +14,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
+fun Texto(texto: String) {
+    Text(
+        text = texto,
+        fontSize = 24.sp,
+        fontWeight = FontWeight.Bold,
+        color = Color.White
+    )
+}
+
+@Composable
 fun Botao(modifier: Modifier = Modifier, texto: String, onClick: () -> Unit) {
     Row(){
         Button(
@@ -30,14 +40,4 @@ fun Botao(modifier: Modifier = Modifier, texto: String, onClick: () -> Unit) {
             )
         }
     }
-}
-
-@Composable
-fun Texto(texto: String) {
-    Text(
-        text = texto,
-        fontSize = 24.sp,
-        fontWeight = FontWeight.Bold,
-        color = Color.White
-    )
 }

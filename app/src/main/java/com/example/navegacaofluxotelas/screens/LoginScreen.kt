@@ -11,7 +11,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.navegacaofluxotelas.Botao
@@ -22,7 +21,8 @@ import com.example.navegacaofluxotelas.Texto
 @Composable
 fun LoginScreen(
     modifier: Modifier = Modifier,
-    navController: NavController){
+    navController: NavController
+){
     Box(
         modifier = Modifier
             .fillMaxSize()

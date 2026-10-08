@@ -11,14 +11,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.navegacaofluxotelas.Botao
 import com.example.navegacaofluxotelas.Texto
-
-@Preview(showSystemUi = true, showBackground = true)
 @Composable
-fun MenuScreen(modifier: Modifier = Modifier){
+fun MenuScreen(
+    modifier: Modifier = Modifier,
+    navController: NavController
+){
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -37,14 +38,17 @@ fun MenuScreen(modifier: Modifier = Modifier){
             verticalArrangement = Arrangement.spacedBy(16.dp) // espaçamento
         ){
             Botao(
+                onClick = {navController.navigate("perfil/Nanda/20")}, // o parametro preenchido fica aqui, antes da tela vir
                 texto = "Perfil"
             )
 
             Botao(
+                onClick = {navController.navigate("pedidos?numeroPedido=8234")},
                 texto = "Pedidos"
             )
 
             Botao(
+                onClick = {navController.navigate("login")},
                 texto = "Sair"
             )
         }
